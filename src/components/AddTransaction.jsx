@@ -1,10 +1,8 @@
-import React, { useContext, useState, useId } from 'react'
+import React, { useContext, useState} from 'react'
 import { GlobalContext } from '../context/GlobalState'
 import { v4 as uuidv4 } from 'uuid'
 
 export const AddTransaction = () => {
-    // useId 
-    // const id = useId()
     // state 
     const [text, setText] = useState('')
     const [amount, setAmount] = useState(0)
@@ -21,7 +19,10 @@ export const AddTransaction = () => {
             amount: +amount
         }
         // addTransaction function takes newTransaction and adds it to Transactions in GlobalContext  
-        addTransaction(newTransaction)
+            addTransaction(newTransaction)
+            // remove text and number from field after sumbit button 
+            setAmount(0)
+            setText("")
     }
 
   return (
